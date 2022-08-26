@@ -1,0 +1,16 @@
+html
+    head
+        style
+            include style.css
+    body
+        form(method="post" action="/")
+            textarea(name="note")
+            input(type="submit")
+
+        h2 List of notes:
+        ul
+            each note,idx in notes
+                li
+                    span.note-span
+                        =note
+                    button(onclick=`location.href='/del/${note._id}'`) delete
